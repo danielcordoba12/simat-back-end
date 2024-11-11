@@ -1,0 +1,36 @@
+LOAD DATA LOCAL INFILE 'C:\\Users\\GMIPC\\Desktop\\Alcaldia\\simat julio\\proc8359753.txt'
+INTO TABLE nombre_de_tabla
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+
+
+select * from tablaprueba limit 15 into outfile 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\extraer.csv'
+fields terminated by ';'
+lines terminated by '\n'; 
+-----------------------------------------------------------------------
+load data infile 'C:\\Users\\Administrador del PC\\OneDrive\\Escritorio\\datos.csv' 
+into table tablaprueba
+fields terminated by ';' 
+lines terminated by '\n';
+
+select * from tablaprueba limit 15 into outfile 'C:\\Users\\Administrador del PC\\OneDrive\\Escritorio\\extraer.csv'
+fields terminated by ';'
+lines terminated by '\n';
+------------------------------------------------------------------------
+show global variables like 'local_infile';
+
+show variables like 'secure_file_priv';
+------------------------------------------------------------------------
+[client]
+local_infile=1
+
+[mysqld]
+local_infile=1
+
+#Secure File Priv
+secure-file-priv=""
+-----------------------------------------------------------------------
+UPDATE tabla SET columna = 'campo' WHERE columna = 'campo';
+SELECT COUNT(*) FROM tabla; 
