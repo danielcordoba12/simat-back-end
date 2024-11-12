@@ -50,7 +50,7 @@ const uploadFile = async (req, res) => {
         res.status(200).send('Archivo procesado y datos cargados con éxito');
     } catch (error) {
         console.error('Hubo un error al procesar el archivo', error);
-        res.status(500).send('Hubo un error al procesar el archivo');
+        res.status(500).send('Hubo un error al procesar el archivo',error);
     }
 };
 
