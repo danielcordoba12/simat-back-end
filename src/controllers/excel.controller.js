@@ -89,7 +89,9 @@ export const createExcelFile = (req,res ) => {
 
 
         worksheet.getCell('A8').value = 'REPROBADO'
-        worksheet.getCell('B8').value = infoSedes[i][0].retirados
+        // worksheet.getCell('B8').value = infoSedes[i][0].retirados
+        worksheet.getCell('B8').value = 0
+        
 
         worksheet.getCell('A9').value = 'RETIRADOS'
         worksheet.getCell('B9').value = infoSedes[i][0].retirados
