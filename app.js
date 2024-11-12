@@ -15,7 +15,13 @@ const app = express ();
 app.use(express.json());
 // app.use(bodyParser.json())
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://simat-fronted.onrender.com',  // Permite solo este origen
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],   // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Cabeceras permitidas
+};
+
+app.use(cors(corsOptions));
 
 app.use("/instituciones",instiucionesRoute);
 app.use("/sedes",sedesRoute);
